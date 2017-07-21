@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { TestServiceService } from './feature-module/test-service.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(testServiceService: TestServiceService) {
+    console.log(testServiceService.getProperty());
+  }
 }
