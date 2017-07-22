@@ -1,0 +1,16 @@
+<form [formGroup]="pvqForm" (ngSubmit)="submit(pvqForm)">
+  <div [formArrayName]="'questions'">
+    <div *ngFor="let question of questionGroups.controls; let i = index;" class="form-group">
+      <div [formGroupName]="i">
+        <label class="center-block">{{'question' + i}}:
+          <input formControlName="question" class="form-control"/> 
+        </label>
+        <label class="center-block">{{'answer' + i}}:
+          <input formControlName="answer" class="form-control"> 
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button>Submit</button>
+</form>
